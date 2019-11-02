@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parker's Pieces Picker</title>
+</head>
+<body>
+
+<fieldset>
+    <h3>Pick Your Pieces</h3>
+    <form action="/fortune_results" name="participation" method="GET">
+        What's your name?
+        <br>
+        <br>
+        <input type="text" name="name">
+        <br>
+        <br>
+        What's your concentration?
+        <br>
+        <br>
+        <input type="radio" name="concentration" value="Mobile">Mobile<br>
+        <input type="radio" name="concentration" value="BEW">BEW<br>
+        <input type="radio" name="concentration" value="FEW">FEW<br>
+        <input type="radio" name="concentration" value="DS">Data Science<br>
+        <br>
+        <p>What's your birthday?</p>
+        <input type="date" name="birthday">
+        <br>
+        <br>
+        What's your favorite toy?
+
+        <select name="concentration">
+            <option value="logs">Lincoln Logs</option>
+            <option value="coloring">Coloring, painting, etc.</option>
+            <option value="making">General arts and crafts, making/hacking</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Pick!">
+    </form>
+</fieldset>
+
+</body>
+</html>
