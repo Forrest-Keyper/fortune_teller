@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import requests
 
 
 app = Flask(__name__, template_folder = 'templates')
@@ -18,6 +19,30 @@ playlists = [
 def playlists_index():
     # find() method returns an iterable of all playlists in our database
     return render_template('fortune.html')
+
+
+@app.route('/weather')
+def weatherForm():
+    return render_template('weather_form.html')
+
+
+@app.route('/weather_results')
+def weather_results_page():
+    city = request.args.get('city')
+
+    params = {
+        'q': city,
+        'appid': '31937b806e363fb9fa09d33612d3a95c',
+
+    }
+    response = requests.get('http://api.openweathermap.org/data/2.5/weather', params=params)
+    return(render_template('weather_show.html', data=response.json()))
+
+
+@app.route('/weather_report')
+def weather_display(data):
+    return(render_template('weather_show.html'))
+
 
 
 @app.route('/fortune_results')
